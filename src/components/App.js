@@ -5,12 +5,12 @@ function recursiveTree(data){
 	return Object.entries(data).map(([key, value])=>{
 		if(value.type==='folder'){
 			return <details key={key} >
-				<summary> Folder {key}</summary>
+				<summary> 📁 {key}</summary>
 				{recursiveTree(value.children)}
 			</details>
 		}
 		else{
-			return <div key={key} > File {key} </div>
+			return <div key={key} > 📄 {key} </div>
 		}
 	})
 }

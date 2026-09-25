@@ -13,11 +13,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './styles/index.css';
-import AppURL from './components/AppURL';
+import App from './components/App';
 import { BrowserRouter } from 'react-router-dom';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 	<BrowserRouter>
-		<AppURL />
+		<App />
 	</BrowserRouter>
 );
