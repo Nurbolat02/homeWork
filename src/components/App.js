@@ -1,18 +1,22 @@
 import { useEffect, useState } from 'react';
 import '../styles/App.css';
 
-function recursiveTree(data){
-	return Object.entries(data).map(([key, value])=>{
-		if(value.type==='folder'){
-			return <details key={key} >
-				<summary> 📁 {key}</summary>
-				{recursiveTree(value.children)}
-			</details>
+function recursiveTree(data) {
+	if (!data) return null;
+
+	return Object.entries(data).map(([key, value]) => {
+		if (value.type === 'folder') {
+			return (
+				<details key={key}>
+					<summary>📁 {key}</summary>
+					{recursiveTree(value.children)}
+				</details>
+			);
 		}
-		else{
-			return <div key={key} > 📄 {key} </div>
-		}
-	})
+		return (
+		<div key={key}>📄 {key}</div>
+	)
+	});
 }
 
 function App() {
